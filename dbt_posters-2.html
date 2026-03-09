@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DBT Skills Posters</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #F5E6C0;
+    --gold-dark: #8B6914;
+    --pink: #C4566A;
+    --pink-light: #F2D0D7;
+    --pink-dark: #8B2A3D;
+    --red: #9B2335;
+    --red-light: #F0C5CC;
+    --blue: #2C6FA8;
+    --blue-light: #C8DFF2;
+    --blue-dark: #1A4A75;
+    --off-white: #FAF8F3;
+    --dark: #1C1C1C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #EFEFEF;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .poster {
+    width: 794px;
+    min-height: 1123px;
+    padding: 50px 44px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* ===================== POSTER HEADER ===================== */
+  .poster-header {
+    text-align: center;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .poster-header .big-word {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: -1px;
+    display: block;
+  }
+
+  .poster-header .sub-word {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* ===================== GRID ===================== */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .grid-full { margin-bottom: 16px; }
+
+  /* ===================== CARD ===================== */
+  .card {
+    border-radius: 16px;
+    padding: 22px 20px;
+    position: relative;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .card-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.65;
+  }
+
+  .card p, .card li {
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+
+  .card strong { font-weight: 700; }
+
+  .item-row {
+    margin-bottom: 7px;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .item-label {
+    font-weight: 700;
+    display: inline;
+  }
+
+  .dot-divider {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 0 6px;
+    opacity: 0.5;
+  }
+
+  /* ===================== DIVIDER LINE ===================== */
+  .divider {
+    width: 40px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 8px 0 10px;
+  }
+
+  /* ===================== PILL / TAG ===================== */
+  .pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 3px 3px 3px 0;
+  }
+
+  /* ======================== BG SHAPES ====================== */
+  .bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.07;
+    z-index: 0;
+  }
+
+  .content { position: relative; z-index: 2; }
+
+  /* ============================================================
+     POSTER 1 — INTERPERSONAL EFFECTIVENESS  (gold)
+  ============================================================ */
+  .p1 { background: var(--off-white); }
+  .p1 .big-word { color: var(--gold-dark); }
+  .p1 .sub-word { color: var(--dark); }
+  .p1 .card-dark { background: var(--gold-dark); color: #fff; }
+  .p1 .card-mid { background: var(--gold); color: var(--dark); }
+  .p1 .card-light { background: var(--gold-light); color: var(--dark); }
+  .p1 .divider { background: var(--gold); }
+  .p1 .card-dark .divider { background: rgba(255,255,255,0.4); }
+  .p1 .pill-gold { background: rgba(255,255,255,0.2); color: #fff; }
+  .p1 .card-mid .pill-gold { background: rgba(0,0,0,0.12); color: var(--dark); }
+  .p1 .dot-divider { background: var(--gold-dark); }
+  .p1 .card-light .dot-divider { background: var(--gold-dark); }
+  .p1 .header-line { background: var(--gold); width: 80px; height: 4px; border-radius: 2px; margin: 10px auto 0; }
+
+  /* ============================================================
+     POSTER 2 — DISTRESS TOLERANCE  (pink/rose)
+  ============================================================ */
+  .p2 { background: #FDF5F6; }
+  .p2 .big-word { color: var(--pink-dark); }
+  .p2 .sub-word { color: var(--dark); }
+  .p2 .card-dark { background: var(--pink-dark); color: #fff; }
+  .p2 .card-mid { background: var(--pink); color: #fff; }
+  .p2 .card-light { background: var(--pink-light); color: var(--dark); }
+  .p2 .divider { background: var(--pink); }
+  .p2 .card-dark .divider, .p2 .card-mid .divider { background: rgba(255,255,255,0.3); }
+  .p2 .dot-divider { background: var(--pink-dark); }
+  .p2 .card-light .dot-divider { background: var(--pink-dark); }
+  .p2 .header-line { background: var(--pink); width: 80px; height: 4px; border-radius: 2px; margin: 10px auto 0; }
+  .p2 .step-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; opacity: 0.3; margin-right: 8px; }
+  .p2 .step-row { display: flex; align-items: baseline; margin-bottom: 8px; font-size: 12.5px; }
+  .p2 table { width: 100%; border-collapse: collapse; font-size: 11.5px; margin-top: 8px; }
+  .p2 th { font-weight: 700; text-align: center; padding: 5px; background: rgba(0,0,0,0.08); }
+  .p2 td { padding: 5px; text-align: center; border: 1px solid rgba(0,0,0,0.1); }
+  .p2 .pill-pink { background: rgba(255,255,255,0.2); color: #fff; }
+
+  /* ============================================================
+     POSTER 3 — PRACTICE MINDFULNESS  (crimson/burgundy)
+  ============================================================ */
+  .p3 { background: #FAF4F5; }
+  .p3 .big-word { color: var(--red); }
+  .p3 .sub-word { color: var(--dark); }
+  .p3 .card-dark { background: var(--red); color: #fff; }
+  .p3 .card-mid { background: #B5394E; color: #fff; }
+  .p3 .card-light { background: var(--red-light); color: var(--dark); }
+  .p3 .divider { background: var(--red); }
+  .p3 .card-dark .divider, .p3 .card-mid .divider { background: rgba(255,255,255,0.3); }
+  .p3 .dot-divider { background: var(--red); }
+  .p3 .header-line { background: var(--red); width: 80px; height: 4px; border-radius: 2px; margin: 10px auto 0; }
+  .p3 .venn { width: 120px; height: 80px; position: relative; margin: 12px auto; }
+  .p3 .venn-circle {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    opacity: 0.6;
+  }
+  .p3 .venn-l { background: rgba(255,255,255,0.5); left: 5px; }
+  .p3 .venn-r { background: rgba(255,255,255,0.5); right: 5px; }
+  .p3 .venn-label { font-size: 10px; font-weight: 700; position: absolute; text-align: center; }
+  .p3 .venn-label.wm { bottom: 0; left: 50%; transform: translateX(-50%); color: #fff; letter-spacing: 1px; text-transform: uppercase; font-size: 9px; }
+
+  /* ============================================================
+     POSTER 4 — EMOTIONAL REGULATION  (blue)
+  ============================================================ */
+  .p4 { background: #F3F7FB; }
+  .p4 .big-word { color: var(--blue-dark); }
+  .p4 .sub-word { color: var(--dark); }
+  .p4 .card-dark { background: var(--blue-dark); color: #fff; }
+  .p4 .card-mid { background: var(--blue); color: #fff; }
+  .p4 .card-light { background: var(--blue-light); color: var(--dark); }
+  .p4 .divider { background: var(--blue); }
+  .p4 .card-dark .divider, .p4 .card-mid .divider { background: rgba(255,255,255,0.3); }
+  .p4 .dot-divider { background: var(--blue-dark); }
+  .p4 .header-line { background: var(--blue); width: 80px; height: 4px; border-radius: 2px; margin: 10px auto 0; }
+  .p4 .step-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; opacity: 0.3; margin-right: 8px; }
+  .p4 .step-row { display: flex; align-items: baseline; margin-bottom: 8px; font-size: 12.5px; }
+
+  /* print support */
+  @media print {
+    body { background: white; padding: 0; gap: 0; }
+    .poster { page-break-after: always; }
+  }
+
+  .print-note {
+    background: #333;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="print-note">💡 Use <strong>Ctrl+P / Cmd+P</strong> → "Save as PDF" to export individual posters. Set paper size to A4 or Letter.</div>
+
+<!-- ============================================================
+     POSTER 1 — INTERPERSONAL EFFECTIVENESS
+============================================================ -->
+<div class="poster p1">
+  <div class="bg-circle" style="width:400px;height:400px;background:var(--gold);top:-120px;right:-100px;"></div>
+  <div class="bg-circle" style="width:250px;height:250px;background:var(--gold-dark);bottom:-60px;left:-60px;"></div>
+
+  <div class="content">
+    <div class="poster-header">
+      <span class="big-word">Interpersonal</span>
+      <span class="sub-word">Effectiveness</span>
+      <div class="header-line"></div>
+    </div>
+
+    <!-- Row 1: 3 cols -->
+    <div class="grid-3">
+      <!-- Consider Priorities -->
+      <div class="card card-dark">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Framework</div>
+        <div class="card-title">Consider Priorities</div>
+        <div class="divider"></div>
+        <div class="item-row"><span class="item-label">Prioritize</span> your interpersonal goals across three dimensions:</div>
+        <div style="margin-top:8px;">
+          <div class="pill pill-gold">Objective</div>
+          <div class="pill pill-gold">Relationship</div>
+          <div class="pill pill-gold">Self-Respect</div>
+        </div>
+      </div>
+
+      <!-- FAST -->
+      <div class="card card-mid">
+        <div class="card-subtitle" style="color:rgba(0,0,0,0.5)">Acronym</div>
+        <div class="card-title">F.A.S.T.</div>
+        <div class="divider" style="background:rgba(0,0,0,0.2)"></div>
+        <div class="item-row"><span class="item-label">F</span> — Fair<span class="dot-divider"></span>Be fair to others and yourself</div>
+        <div class="item-row"><span class="item-label">A</span> — Apologies<span class="dot-divider"></span>Don't apologize unnecessarily</div>
+        <div class="item-row"><span class="item-label">S</span> — Stick to Values<span class="dot-divider"></span>Don't change for validation</div>
+        <div class="item-row"><span class="item-label">T</span> — Truthful<span class="dot-divider"></span>Don't lie or make excuses</div>
+      </div>
+
+      <!-- GIVE -->
+      <div class="card card-light">
+        <div class="card-subtitle" style="color:var(--gold-dark);opacity:0.7">Acronym</div>
+        <div class="card-title">G.I.V.E.</div>
+        <div class="divider"></div>
+        <div class="item-row"><span class="item-label">G</span> — Gentle<span class="dot-divider"></span>Don't attack, threaten, or judge others</div>
+        <div class="item-row"><span class="item-label">I</span> — Interest<span class="dot-divider"></span>Show interest; don't interrupt</div>
+        <div class="item-row"><span class="item-label">V</span> — Validate<span class="dot-divider"></span>Acknowledge their thoughts & feelings</div>
+        <div class="item-row"><span class="item-label">E</span> — Easy<span class="dot-divider"></span>Smile, use humour</div>
+      </div>
+    </div>
+
+    <!-- Row 2: 3 cols -->
+    <div class="grid-3">
+      <!-- THINK -->
+      <div class="card card-light">
+        <div class="card-subtitle" style="color:var(--gold-dark);opacity:0.7">Acronym</div>
+        <div class="card-title">T.H.I.N.K.</div>
+        <div class="divider"></div>
+        <div class="item-row"><span class="item-label">T</span> — Think from their point of view</div>
+        <div class="item-row"><span class="item-label">H</span> — Have Empathy — what does it feel like for them?</div>
+        <div class="item-row"><span class="item-label">I</span> — Interpretations — why did they react that way?</div>
+        <div class="item-row"><span class="item-label">N</span> — Notice their actions</div>
+        <div class="item-row"><span class="item-label">K</span> — Kindness — respond kindly</div>
+      </div>
+
+      <!-- Intensity -->
+      <div class="card card-dark">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Scale</div>
+        <div class="card-title">Intensity</div>
+        <div class="divider"></div>
+        <p>Consider options for intensity based on:</p>
+        <div style="margin-top:10px;">
+          <div class="pill pill-gold">Priorities</div>
+          <div class="pill pill-gold">Capabilities</div>
+          <div class="pill pill-gold">Time</div>
+          <div class="pill pill-gold">Authority</div>
+          <div class="pill pill-gold">Rights</div>
+          <div class="pill pill-gold">Relationship</div>
+          <div class="pill pill-gold">Reciprocity</div>
+          <div class="pill pill-gold">Goals</div>
+          <div class="pill pill-gold">Respect</div>
+        </div>
+      </div>
+
+      <!-- DEARMAN -->
+      <div class="card card-mid">
+        <div class="card-subtitle" style="color:rgba(0,0,0,0.5)">Acronym</div>
+        <div class="card-title">D.E.A.R.M.A.N.</div>
+        <div class="divider" style="background:rgba(0,0,0,0.2)"></div>
+        <div class="item-row" style="font-size:11.5px;"><span class="item-label">D</span> — Describe objectively</div>
+        <div class="item-row" style="font-size:11.5px;"><span class="item-label">E</span> — Express your feelings</div>
+        <div class="item-row" style="font-size:11.5px;"><span class="item-label">A</span> — Assert yourself clearly</div>
+        <div class="item-row" style="font-size:11.5px;"><span class="item-label">R</span> — Reinforce or reward</div>
+        <div class="item-row" style="font-size:11.5px;"><span class="item-label">M</span> — Mindfully keep focused</div>
+        <div class="item-row" style="font-size:11.5px;"><span class="item-label">A</span> — Appear confident</div>
+        <div class="item-row" style="font-size:11.5px;"><span class="item-label">N</span> — Negotiate — be open to give and take</div>
+      </div>
+    </div>
+
+    <!-- Row 3: full width Boundaries -->
+    <div class="grid-full">
+      <div class="card card-dark" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+        <div>
+          <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Boundaries</div>
+          <div class="card-title">Know Your Limits</div>
+          <div class="divider"></div>
+        </div>
+        <div style="font-size:12.5px;line-height:1.6;">
+          <p>Protect yourself and your self-esteem by knowing <strong>how and when</strong> to exercise stronger boundaries.</p>
+        </div>
+        <div style="font-size:12.5px;line-height:1.6;">
+          <p>Learn when to be <strong>flexible</strong> in appropriate situations. Practice <strong>negotiating</strong> your boundaries: when to be distant and when to share.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     POSTER 2 — DISTRESS TOLERANCE
+============================================================ -->
+<div class="poster p2">
+  <div class="bg-circle" style="width:350px;height:350px;background:var(--pink);top:-100px;left:-80px;"></div>
+  <div class="bg-circle" style="width:200px;height:200px;background:var(--pink-dark);bottom:-50px;right:-40px;"></div>
+
+  <div class="content">
+    <div class="poster-header">
+      <span class="big-word">Distress</span>
+      <span class="sub-word">Tolerance</span>
+      <div class="header-line"></div>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="grid-3">
+      <!-- Wise Mind ACCEPTS -->
+      <div class="card card-dark">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Skill</div>
+        <div class="card-title">Wise Mind ACCEPTS</div>
+        <div class="divider"></div>
+        <p style="font-size:11.5px;margin-bottom:8px;">Distract from distress using:</p>
+        <div class="pill pill-pink">Activities</div>
+        <div class="pill pill-pink">Contribution</div>
+        <div class="pill pill-pink">Comparison</div>
+        <div class="pill pill-pink">Emotions</div>
+        <div class="pill pill-pink">Pushing Away</div>
+        <div class="pill pill-pink">Thoughts</div>
+        <div class="pill pill-pink">Sensations</div>
+      </div>
+
+      <!-- Self-Soothe -->
+      <div class="card card-mid">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.7)">Skill</div>
+        <div class="card-title">Self-Soothe</div>
+        <div class="divider"></div>
+        <p style="font-size:12px;margin-bottom:10px;">Shift your focus from your mind to your senses.</p>
+        <div class="item-row"><span class="item-label">Vision »</span> art, trees</div>
+        <div class="item-row"><span class="item-label">Hearing »</span> music, rain</div>
+        <div class="item-row"><span class="item-label">Smell »</span> lotion, candle</div>
+        <div class="item-row"><span class="item-label">Taste »</span> spices, fruits</div>
+        <div class="item-row"><span class="item-label">Touch »</span> bath, ice pack</div>
+      </div>
+
+      <!-- Radical Acceptance -->
+      <div class="card card-light">
+        <div class="card-subtitle" style="color:var(--pink-dark);opacity:0.7">Skill</div>
+        <div class="card-title">Radical Acceptance</div>
+        <div class="divider"></div>
+        <p style="margin-bottom:8px;">I can accept life <strong>as it is.</strong></p>
+        <p style="margin-bottom:8px;">I cannot change what has <strong>already happened.</strong></p>
+        <p>The present is the <strong>only moment</strong> I have control over.</p>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid-3">
+      <!-- TIP -->
+      <div class="card card-light">
+        <div class="card-subtitle" style="color:var(--pink-dark);opacity:0.7">Acronym</div>
+        <div class="card-title">T.I.P.</div>
+        <div class="divider"></div>
+        <p style="margin-bottom:8px;font-size:12px;">Control emotions by changing body chemistry.</p>
+        <div class="pill" style="background:var(--pink);color:#fff;margin-bottom:4px;">Temperature</div><br>
+        <div class="pill" style="background:var(--pink);color:#fff;margin-bottom:4px;">Intense Exercise</div><br>
+        <div class="pill" style="background:var(--pink);color:#fff;margin-bottom:4px;">Paced Breathing</div><br>
+        <div class="pill" style="background:var(--pink);color:#fff;">Progressive Muscle Relaxation</div>
+      </div>
+
+      <!-- STOP -->
+      <div class="card card-dark" style="text-align:center;">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Acronym</div>
+        <div class="card-title" style="text-align:center;">S.T.O.P.</div>
+        <div class="divider" style="margin:8px auto 10px;"></div>
+        <div style="font-size:18px;font-family:'Playfair Display',serif;font-weight:700;margin-bottom:6px;">STOP</div>
+        <div style="font-size:13px;margin-bottom:4px;">Take a Step Back</div>
+        <div style="font-size:13px;margin-bottom:4px;">Observe</div>
+        <div style="font-size:13px;">Proceed Accordingly</div>
+      </div>
+
+      <!-- REST -->
+      <div class="card card-mid">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.7)">Skill</div>
+        <div class="card-title">REST</div>
+        <div class="divider"></div>
+        <div class="step-row"><span class="step-num">1</span><span><strong>Rest</strong> and Relax</span></div>
+        <div class="step-row"><span class="step-num">2</span><span><strong>Evaluate</strong></span></div>
+        <div class="step-row"><span class="step-num">3</span><span>Set an <strong>Intention</strong></span></div>
+        <div class="step-row"><span class="step-num">4</span><span>Take <strong>Action</strong></span></div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="grid-3">
+      <!-- Pros & Cons -->
+      <div class="card card-light">
+        <div class="card-subtitle" style="color:var(--pink-dark);opacity:0.7">Skill</div>
+        <div class="card-title">Pros &amp; Cons</div>
+        <div class="divider"></div>
+        <p style="font-size:11.5px;margin-bottom:8px;">List the pros &amp; cons to understand the possible consequences of engaging in your urge. Focus on long-term goals.</p>
+        <table>
+          <tr><th></th><th>Pros</th><th>Cons</th></tr>
+          <tr><td style="font-weight:700;">Acting on urge</td><td>Use to Validate</td><td>Use to Avoid</td></tr>
+          <tr><td style="font-weight:700;">Resisting urge</td><td>Use to Avoid</td><td>Use to Validate</td></tr>
+        </table>
+      </div>
+
+      <!-- Improve the Moment -->
+      <div class="card card-dark">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Acronym</div>
+        <div class="card-title">Improve the Moment</div>
+        <div class="divider"></div>
+        <div class="pill pill-pink">Imagery</div>
+        <div class="pill pill-pink">Meaning</div>
+        <div class="pill pill-pink">Prayer</div>
+        <div class="pill pill-pink">Relaxation</div>
+        <div class="pill pill-pink">One Thing in the Moment</div>
+        <div class="pill pill-pink">Vacation</div>
+        <div class="pill pill-pink">Encouragement</div>
+      </div>
+
+      <!-- Accepting Reality -->
+      <div class="card card-mid">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.7)">Skill</div>
+        <div class="card-title">Accepting Reality</div>
+        <div class="divider"></div>
+        <div class="item-row">Observe the Breath</div>
+        <div class="item-row">Half-Smile</div>
+        <div class="item-row">Awareness Exercises</div>
+        <div class="item-row">Radical Acceptance</div>
+        <div class="item-row">Willingness</div>
+        <div class="item-row">Turning the Mind</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     POSTER 3 — PRACTICE MINDFULNESS
+============================================================ -->
+<div class="poster p3">
+  <div class="bg-circle" style="width:300px;height:300px;background:var(--red);top:-80px;right:-60px;"></div>
+  <div class="bg-circle" style="width:180px;height:180px;background:var(--red);bottom:-30px;left:-40px;"></div>
+
+  <div class="content">
+    <div class="poster-header">
+      <span class="big-word">Practice</span>
+      <span class="sub-word">Mindfulness</span>
+      <div class="header-line"></div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:16px;">
+      <!-- HOW Skills -->
+      <div class="card card-dark">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Skills</div>
+        <div class="card-title">"How" Skills</div>
+        <div class="divider"></div>
+        <div class="item-row"><span class="item-label">Non-judgmentally »</span> Be objective about your thoughts and emotions</div>
+        <div class="item-row"><span class="item-label">One-mindfully »</span> Focus on one thing at a time</div>
+        <div class="item-row"><span class="item-label">Effectively »</span> Focus on what works</div>
+      </div>
+
+      <!-- Wise Mind -->
+      <div class="card card-mid">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.7)">Concept</div>
+        <div class="card-title">Wise Mind</div>
+        <div class="divider"></div>
+        <p style="margin-bottom:12px;font-size:12.5px;">The balance between emotion and reason.</p>
+        <!-- SVG Venn diagram -->
+        <svg viewBox="0 0 220 110" width="100%" style="margin:8px 0;display:block;">
+          <defs>
+            <clipPath id="clipL">
+              <circle cx="80" cy="55" r="48"/>
+            </clipPath>
+            <clipPath id="clipR">
+              <circle cx="140" cy="55" r="48"/>
+            </clipPath>
+          </defs>
+          <!-- Left circle -->
+          <circle cx="80" cy="55" r="48" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+          <!-- Right circle -->
+          <circle cx="140" cy="55" r="48" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+          <!-- Intersection highlight -->
+          <circle cx="140" cy="55" r="48" fill="rgba(255,255,255,0.22)" clip-path="url(#clipL)"/>
+          <!-- Left label -->
+          <text x="62" y="50" text-anchor="middle" font-family="DM Sans,Helvetica Neue,Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.85)">Reasonable</text>
+          <text x="62" y="62" text-anchor="middle" font-family="DM Sans,Helvetica Neue,Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.85)">Mind</text>
+          <!-- Right label -->
+          <text x="158" y="50" text-anchor="middle" font-family="DM Sans,Helvetica Neue,Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.85)">Emotional</text>
+          <text x="158" y="62" text-anchor="middle" font-family="DM Sans,Helvetica Neue,Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.85)">Mind</text>
+          <!-- Centre / Wise Mind label -->
+          <text x="110" y="52" text-anchor="middle" font-family="DM Sans,Helvetica Neue,Arial,sans-serif" font-size="8.5" font-weight="900" fill="#fff">WISE</text>
+          <text x="110" y="63" text-anchor="middle" font-family="DM Sans,Helvetica Neue,Arial,sans-serif" font-size="8.5" font-weight="900" fill="#fff">MIND</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- WHAT Skills -->
+      <div class="card card-mid">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.7)">Skills</div>
+        <div class="card-title">"What" Skills</div>
+        <div class="divider"></div>
+        <div class="item-row"><span class="item-label">Observe »</span> Just notice it (urge surfing)</div>
+        <div class="item-row"><span class="item-label">Describe »</span> Put words to it</div>
+        <div class="item-row"><span class="item-label">Participate »</span> Let yourself be immersed in the moment</div>
+      </div>
+
+      <!-- How to be Non-Judgemental -->
+      <div class="card card-light">
+        <div class="card-subtitle" style="color:var(--red);opacity:0.8">Practice</div>
+        <div class="card-title">Being Non-Judgemental</div>
+        <div class="divider"></div>
+        <div class="item-row">Be <span class="item-label">aware</span> without evaluating.</div>
+        <div class="item-row"><span class="item-label">Accept</span> each moment.</div>
+        <div class="item-row"><span class="item-label">Distinguish</span> opinions from facts.</div>
+        <div class="item-row">Acknowledge what is <span class="item-label">helpful</span> and what is <span class="item-label">harmful</span> without judging.</div>
+      </div>
+    </div>
+
+    <!-- Extra breathing space / quote card -->
+    <div style="margin-top:16px;">
+      <div class="card" style="background:var(--red);color:#fff;text-align:center;padding:28px;">
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;font-style:italic;line-height:1.4;">"The present moment is the only moment available to us, and it is the door to all moments."</div>
+        <div style="margin-top:10px;font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:0.6;">Thích Nhất Hạnh</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     POSTER 4 — EMOTIONAL REGULATION
+============================================================ -->
+<div class="poster p4">
+  <div class="bg-circle" style="width:380px;height:380px;background:var(--blue);top:-100px;right:-80px;"></div>
+  <div class="bg-circle" style="width:220px;height:220px;background:var(--blue-dark);bottom:-60px;left:-50px;"></div>
+
+  <div class="content">
+    <div class="poster-header">
+      <span class="big-word">Emotional</span>
+      <span class="sub-word">Regulation</span>
+      <div class="header-line"></div>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="grid-3">
+      <!-- PLEASE MASTER -->
+      <div class="card card-dark">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Skill</div>
+        <div class="card-title">P.L.E.A.S.E. Master</div>
+        <div class="divider"></div>
+        <p style="font-size:11.5px;margin-bottom:8px;">Take care of your mind by taking care of your body.</p>
+        <div class="item-row" style="font-size:12px;">Treat <strong>Physical</strong> Illness</div>
+        <div class="item-row" style="font-size:12px;"><strong>Balanced</strong> Eating</div>
+        <div class="item-row" style="font-size:12px;">Avoid Mood-<strong>Altering</strong> Substances</div>
+        <div class="item-row" style="font-size:12px;"><strong>Balanced</strong> Sleep</div>
+        <div class="item-row" style="font-size:12px;"><strong>Exercise</strong> Regularly</div>
+        <div class="item-row" style="font-size:12px;">Build <strong>Mastery</strong></div>
+      </div>
+
+      <!-- Increase Positives -->
+      <div class="card card-mid" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.7)">Skill</div>
+        <div class="card-title">Increase Positives</div>
+        <div class="divider" style="margin:8px auto 12px;"></div>
+        <div style="font-size:32px;margin-bottom:8px;">▲▲▲</div>
+        <p style="font-size:12.5px;">Be Mindful of <strong>Positives</strong> &amp; Increase Positive Emotions and Events</p>
+      </div>
+
+      <!-- VITALS -->
+      <div class="card card-light">
+        <div class="card-subtitle" style="color:var(--blue-dark);opacity:0.7">Acronym</div>
+        <div class="card-title">V.I.T.A.L.S.</div>
+        <div class="divider"></div>
+        <div class="item-row" style="font-size:12px;"><span class="item-label">V</span> — Validate your feelings</div>
+        <div class="item-row" style="font-size:12px;"><span class="item-label">I</span> — Imagine doing it effectively</div>
+        <div class="item-row" style="font-size:12px;"><span class="item-label">T</span> — Take Small Steps — be patient</div>
+        <div class="item-row" style="font-size:12px;"><span class="item-label">A</span> — Applaud Yourself — encourage your efforts</div>
+        <div class="item-row" style="font-size:12px;"><span class="item-label">L</span> — Lighten the Load — focus on the goal</div>
+        <div class="item-row" style="font-size:12px;"><span class="item-label">S</span> — Sweeten the Pot — reward yourself</div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid-2">
+      <!-- Urge Surfing -->
+      <div class="card card-dark" style="text-align:center;">
+        <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Skill</div>
+        <div class="card-title">Urge Surfing</div>
+        <div class="divider" style="margin:8px auto 12px;"></div>
+        <div style="font-size:40px;margin-bottom:10px;">〰️</div>
+        <p style="font-size:13px;line-height:1.7;">Experience emotions as a <strong>wave.</strong><br>
+        Let them come and go.<br>
+        Just observe.<br>
+        Don't amplify or suppress.</p>
+      </div>
+
+      <!-- Opposite Action -->
+      <div class="card card-light">
+        <div class="card-subtitle" style="color:var(--blue-dark);opacity:0.7">Skill</div>
+        <div class="card-title">Opposite Action</div>
+        <div class="divider"></div>
+        <p style="font-size:11.5px;font-style:italic;margin-bottom:10px;">Act opposite to the emotion.</p>
+        <div class="step-row"><span class="step-num">1</span><span>Identify your <strong>emotion(s)</strong></span></div>
+        <div class="step-row"><span class="step-num">2</span><span>Identify what <strong>prompted</strong> the emotion</span></div>
+        <div class="step-row"><span class="step-num">3</span><span>Is my emotion (or its intensity or duration) <strong>justified?</strong></span></div>
+        <div class="step-row"><span class="step-num">4</span><span>If justified, identify <strong>positive action(s)</strong> you can do instead</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
