@@ -35,12 +35,21 @@
   }
 
   .poster {
-    width: 794px;
-    min-height: 1123px;
-    padding: 50px 44px;
+    width: 100%;
+    max-width: 794px;
+    padding: 30px 20px;
     position: relative;
     overflow: hidden;
     page-break-after: always;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  @media (min-width: 768px) {
+    .poster {
+      padding: 50px 44px;
+      min-height: 1123px;
+    }
   }
 
   /* ===================== POSTER HEADER ===================== */
@@ -74,6 +83,27 @@
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
   .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
   .grid-full { margin-bottom: 16px; }
+  .grid-3-boundaries { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 767px) {
+    .grid-2, .grid-3, .grid-3-boundaries {
+      grid-template-columns: 1fr !important;
+    }
+    .poster-header .big-word {
+      font-size: 42px;
+    }
+    .poster-header .sub-word {
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+    .card {
+      padding: 18px 16px;
+    }
+    .bg-circle {
+      transform: scale(0.6);
+    }
+  }
 
   /* ===================== CARD ===================== */
   .card {
@@ -240,8 +270,20 @@
 
   /* print support */
   @media print {
-    body { background: white; padding: 0; gap: 0; }
-    .poster { page-break-after: always; }
+    body { background: white; padding: 0; gap: 0; display: block; }
+    .poster { 
+      width: 794px;
+      max-width: none;
+      min-height: 1123px;
+      padding: 50px 44px;
+      page-break-after: always;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+    .grid-2 { grid-template-columns: 1fr 1fr !important; }
+    .grid-3, .grid-3-boundaries { grid-template-columns: 1fr 1fr 1fr !important; }
+    .print-note { display: none; }
   }
 
   .print-note {
@@ -361,7 +403,7 @@
 
     <!-- Row 3: full width Boundaries -->
     <div class="grid-full">
-      <div class="card card-dark" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+      <div class="card card-dark grid-3-boundaries">
         <div>
           <div class="card-subtitle" style="color:rgba(255,255,255,0.6)">Boundaries</div>
           <div class="card-title">Know Your Limits</div>
